@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RescuePets</string>
+    <string name="lookingFor_display">I\'m looking for:</string>
+    <string name="cats_display">Cats</string>
+    <string name="dogs_display">Dogs</string>
+    <string name="petName">Example edu.ccm.rescuepets.Pet</string>
+    <string name="petAge">1 year old</string>
+    <string name="petDistance">0.8 miles away</string>
+</resources>
