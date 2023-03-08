@@ -3,7 +3,23 @@
     <string name="lookingFor_display">I\'m looking for:</string>
     <string name="cats_display">Cats</string>
     <string name="dogs_display">Dogs</string>
-    <string name="petName">Example edu.ccm.rescuepets.Pet</string>
-    <string name="petAge">1 year old</string>
-    <string name="petDistance">0.8 miles away</string>
+    <string name="dogName">Goldie</string>
+    <string name="dogAge">1 year old</string>
+    <string name="dogDistance">0.8 miles away</string>
+    <string name="both_display">Both</string>
+
+
+    <string name="catName">Walter</string>
+    <string name="catAge">13 year old</string>
+    <string name="catDistance">2.8 miles away</string>
+
+    <string name="petName">Pet</string>
+    <string name="petAge">Age</string>
+    <string name="petDistance">Distance</string>
+
+    <string name="ASPCA">Here\'s a link to the ASPCA website, which give advice on taking care of your pet: https://www.aspca.org/pet-care</string>
+    <string name="Age">Age:</string>
+    <string name="Animal">Animal</string>
+    <string name="Location">Location:</string>
+    <string name="BackButton">See All Pets</string>
 </resources>

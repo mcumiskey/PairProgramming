@@ -12,8 +12,11 @@ public class Pet {
     int pet_yearsOld;
     float pet_distance;
     boolean pet_isFavorite;
+    int pet_imageID;
 
-    void favorite(){
+    //getresouce ID
+
+    public void favoritePet(){
         pet_isFavorite = !pet_isFavorite;
     }
 
@@ -25,6 +28,7 @@ public class Pet {
         pet_yearsOld = 0;
         pet_distance = 0f;
         pet_isFavorite = false;
+        pet_imageID = 0;
     }
 
     public Pet(String name, boolean isDog, boolean isMale, int yearsOld, float distance, boolean isFavorite){
@@ -34,6 +38,7 @@ public class Pet {
         pet_yearsOld = yearsOld;
         pet_distance = distance;
         pet_isFavorite = isFavorite;
+        pet_imageID = 0;
     }
 
     public Pet(String name, boolean isDog, boolean isMale, int yearsOld, float distance){
@@ -43,5 +48,25 @@ public class Pet {
         pet_yearsOld = yearsOld;
         pet_distance = distance;
         pet_isFavorite = false;
+        pet_imageID = 0;
+    }
+
+    public String getName(){
+        return pet_name;
+    }
+    public boolean checkIfDog(){
+        return pet_isDog;
+    }
+    public boolean checkIfMale(){
+        return pet_isMale;
+    }
+    public int getAge(){
+        return pet_yearsOld;
+    }
+    public float getDistance(){
+        return pet_distance;
+    }
+    public boolean checkIfFavorite(){
+        return pet_isFavorite;
     }
 }

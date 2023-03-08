@@ -1,32 +1,55 @@
 package edu.ccm.rescuepets;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.RadioGroup;
+
+import java.util.List;
+import java.util.ArrayList;
+
+import static android.view.View.GONE;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout petList;
-
-    Pet [] currentPets = {
-            new Pet("Wallace", true, true, 2, 0.3f),
-            new Pet("Henry", false, false, 6, 0.9f)
-    };
+//    ArrayList<Pet> petList;
+//    ListView listView;
+//    private  static CustomViewAdapter adapter;
+private RadioGroup mPetTypeRadioGroup;
+private int mCheckedID;
+private ConstraintLayout mDog;
+private ConstraintLayout mCat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        petList = findViewById(R.id.Pets_LinearLayout);
+        mPetTypeRadioGroup = findViewById(R.id.PetType_RadioGroup);
+        mDog = findViewById(R.id.PetDogCard_ConstraintView);
+        mCat = findViewById(R.id.PetCatCard_ConstraintView);
 
-//        for (Pet p: currentPets) {
-//            View petview = getLayoutInflater().inflate(R.layout.pet_card, null, false);
-//
-//            petList.addView(petview);
-//        }
 
+        int mCheckedID = mPetTypeRadioGroup.getCheckedRadioButtonId();
+        if (mCheckedID == R.id.cats_radioButton){
+            mDog.setVisibility(GONE);
+            mCat.setVisibility(View.VISIBLE);
+        }
+        if (mCheckedID == R.id.dogs_radioButton){
+            mCat.setVisibility(GONE);
+            mDog.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void OpenPetDetail(View view){
+        Intent intent = new Intent(MainActivity.this, PetDetail.class);
+        startActivity(intent);
     }
 }

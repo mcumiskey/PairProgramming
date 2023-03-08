@@ -6,15 +6,196 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/lookingFor_textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/lookingFor_display"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/PetType_RadioGroup">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/PetDogCard_ConstraintView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:forceHasOverlappingRendering="true"
+            android:onClick="OpenPetDetail">
+
+
+            <View
+                android:id="@+id/petcardBG_dog_view"
+                android:layout_width="0dp"
+                android:layout_height="98dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/off_white"
+                android:translationZ="-200dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/petIcon_dog_imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <CheckBox
+                android:id="@+id/likePet_toggleButton"
+                android:layout_width="58dp"
+                android:layout_height="57dp"
+                android:button="@drawable/heart_fill"
+                app:layout_constraintEnd_toEndOf="@+id/petcardBG_dog_view"
+                app:layout_constraintTop_toTopOf="@+id/petcardBG_dog_view" />
+
+            <ImageView
+                android:id="@+id/petIcon_dog_imageView"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                tools:srcCompat="@drawable/golden" />
+
+            <ImageView
+                android:id="@+id/distanceAway_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:alpha="0.5"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:layout_constraintStart_toStartOf="@+id/petcardBG_dog_view"
+                app:layout_constraintTop_toBottomOf="@+id/petAge_textView"
+                tools:srcCompat="@drawable/pawprint" />
+
+            <TextView
+                android:id="@+id/petAge_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/dogAge"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/petcardBG_dog_view"
+                app:layout_constraintTop_toBottomOf="@+id/petName_textView" />
+
+            <TextView
+                android:id="@+id/petName_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/dogName"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/petcardBG_dog_view"
+                app:layout_constraintTop_toTopOf="@+id/petcardBG_dog_view" />
+
+            <TextView
+                android:id="@+id/petDistance_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:text="@string/dogDistance"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/distanceAway_imageView"
+                app:layout_constraintTop_toBottomOf="@+id/petAge_textView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/PetCatCard_ConstraintView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/petInfoCard_ContainerHeight"
+            android:forceHasOverlappingRendering="true"
+            android:onClick="OpenPetDetail"
+            android:visibility="visible">
+
+
+            <View
+                android:id="@+id/petcardBG_cat_view"
+                android:layout_width="0dp"
+                android:layout_height="98dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/off_white"
+                android:translationZ="-200dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/petIcon_cat_imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <CheckBox
+                android:id="@+id/likePet_cat_toggleButton"
+                android:layout_width="58dp"
+                android:layout_height="57dp"
+                android:button="@drawable/heart_fill"
+                app:layout_constraintEnd_toEndOf="@+id/petcardBG_cat_view"
+                app:layout_constraintTop_toTopOf="@+id/petcardBG_cat_view" />
+
+            <ImageView
+                android:id="@+id/petIcon_cat_imageView"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                tools:srcCompat="@drawable/cattie" />
+
+            <ImageView
+                android:id="@+id/distanceAway_cat_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:alpha="0.5"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:layout_constraintStart_toStartOf="@+id/petcardBG_cat_view"
+                app:layout_constraintTop_toBottomOf="@+id/petAge_cat_textView"
+                tools:srcCompat="@drawable/pawprint" />
+
+            <TextView
+                android:id="@+id/petAge_cat_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/catAge"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/petcardBG_cat_view"
+                app:layout_constraintTop_toBottomOf="@+id/petName_cat_textView" />
+
+            <TextView
+                android:id="@+id/petName_cat_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/catName"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/petcardBG_cat_view"
+                app:layout_constraintTop_toTopOf="@+id/petcardBG_cat_view" />
+
+            <TextView
+                android:id="@+id/petDistance_cat_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:text="@string/catDistance"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/distanceAway_cat_imageView"
+                app:layout_constraintTop_toBottomOf="@+id/petAge_cat_textView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <RadioGroup
         android:id="@+id/PetType_RadioGroup"
@@ -36,25 +217,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cats_display" />
-    </RadioGroup>
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PetType_RadioGroup">
-
-        <LinearLayout
-            android:id="@+id/Pets_LinearLayout"
+        <RadioButton
+            android:id="@+id/both_radioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_weight="1"
+            android:text="@string/both_display" />
 
-            />
-        </LinearLayout>
-    </ScrollView>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/lookingFor_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/lookingFor_display"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
