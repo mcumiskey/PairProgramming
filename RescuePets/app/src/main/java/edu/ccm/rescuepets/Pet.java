@@ -5,6 +5,7 @@ import android.widget.ImageView;
 
 public class Pet {
     String pet_name;
+    String pet_description;
     //since we only have dogs and cats, it is a silly way to tell which is which
     boolean pet_isDog;
     //same for male / female - could be refactored for neutered animals
@@ -23,6 +24,7 @@ public class Pet {
     //default initializer
     public Pet(){
         pet_name = "Pet";
+        pet_description = "This is a description";
         pet_isDog = true;
         pet_isMale = false;
         pet_yearsOld = 0;
@@ -31,8 +33,9 @@ public class Pet {
         pet_imageID = 0;
     }
 
-    public Pet(String name, boolean isDog, boolean isMale, int yearsOld, float distance, boolean isFavorite){
+    public Pet(String name, String description, boolean isDog, boolean isMale, int yearsOld, float distance, boolean isFavorite){
         pet_name = name;
+        pet_description = description;
         pet_isDog = isDog;
         pet_isMale = isFavorite;
         pet_yearsOld = yearsOld;
@@ -41,8 +44,9 @@ public class Pet {
         pet_imageID = 0;
     }
 
-    public Pet(String name, boolean isDog, boolean isMale, int yearsOld, float distance){
+    public Pet(String name,  String description, boolean isDog, boolean isMale, int yearsOld, float distance){
         pet_name = name;
+        pet_description = description;
         pet_isDog = isDog;
         pet_isMale = isMale;
         pet_yearsOld = yearsOld;
@@ -54,6 +58,7 @@ public class Pet {
     public String getName(){
         return pet_name;
     }
+    public String getDescription() {return pet_description;}
     public boolean checkIfDog(){
         return pet_isDog;
     }

@@ -46,10 +46,42 @@ private ConstraintLayout mCat;
             mCat.setVisibility(GONE);
             mDog.setVisibility(View.VISIBLE);
         }
+        if (mCheckedID == R.id.both_radioButton){
+            mCat.setVisibility(View.VISIBLE);
+            mDog.setVisibility(View.VISIBLE);
+        }
     }
 
     public void OpenPetDetail(View view){
         Intent intent = new Intent(MainActivity.this, PetDetail.class);
         startActivity(intent);
+    }
+
+    public void OpenDogDetail(View view){
+        Intent intent = new Intent(MainActivity.this, DogActivity.class);
+        startActivity(intent);
+    }
+
+    public void OpenCatDetail(View view){
+        Intent intent = new Intent(MainActivity.this, CatActivity.class);
+        startActivity(intent);
+    }
+
+
+
+    public void RadioButtonClicked(View view) {
+        int mCheckedID = mPetTypeRadioGroup.getCheckedRadioButtonId();
+        if (mCheckedID == R.id.cats_radioButton){
+            mDog.setVisibility(GONE);
+            mCat.setVisibility(View.VISIBLE);
+        }
+        if (mCheckedID == R.id.dogs_radioButton){
+            mCat.setVisibility(GONE);
+            mDog.setVisibility(View.VISIBLE);
+        }
+        if (mCheckedID == R.id.both_radioButton){
+            mCat.setVisibility(View.VISIBLE);
+            mDog.setVisibility(View.VISIBLE);
+        }
     }
 }
